@@ -1,1 +1,39 @@
+let stage =1
+let player
+let setumei
 
+function setup() {
+  createCanvas(400, 400);
+  drawsyoki()
+}
+
+function drawsyoki(){
+  setumei=1
+  drawplayer()
+  
+}
+
+function keyPressed(){
+    if(key=='f'){
+     if(setumei==1){ 
+       drawsetumei()
+    }}
+  }
+
+function drawplayer(){
+  ellipse(150,150,100)
+}
+
+function drawsetumei(){
+  function keyPressed(){
+    if(key=='f'){
+      drawsyoki()
+    }
+  }
+}
+
+function draw() {
+  background(220);
+  
+  
+}
