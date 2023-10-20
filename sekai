@@ -12,6 +12,7 @@ function drawsyoki(){
   background(255);
   textSize(20)
   fill(255,0,0)
+  stroke(255,0,0)
   text("fキーで操作説明",250,380)
   drawplayer();
  }
