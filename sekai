@@ -10,7 +10,7 @@ function drawsyoki(){
   setumei=1;
   drawplayer();
   createCanvas(400, 400);
-  background(220);
+  background(255);
 }
 
 function keyPressed(){
@@ -18,20 +18,19 @@ function keyPressed(){
      if(setumei==1){ 
        drawsetumei();
     }}
-  }
+      else if(key=='g'){
+     if(setumei==2){ 
+      drawsyoki();
+  }}
+}
 
- function drawplayer(){
+function drawplayer(){
   ellipse(150,150,100);
 }
 
 function drawsetumei(){
   setumei=2;
    background(0);
-  function keyPressed(){
-    if(key=='f'){
-      drawsyoki();
-    }
-  }
 }
 
 function draw() {
