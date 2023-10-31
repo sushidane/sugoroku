@@ -1,9 +1,12 @@
+let x2=30;
+let y2=30;
+
 function setup() {
   createCanvas(600, 450);
   strokeWeight(5)
 }
 
-function draw() {
+function drawhuman(){
   strokeWeight(5)
   background(220);
   fill(255)
@@ -18,7 +21,9 @@ function draw() {
   line(200,215,205,210)
   circle(190,192.5,2.5)
   circle(210,192.5,2.5)
-  
+}
+
+function drawteki(){
   fill(0)
   stroke(0)
   rect(375,175,50,50)
@@ -39,7 +44,9 @@ function draw() {
   line(400,210,405,215)
   line(390,210,395,215)
   line(405,215,410,210)
-  
+}
+
+function drawbikkuri(){
   fill(255,255,0)
   stroke(255,255,0)
   rect(175,325,50,50)
@@ -50,8 +57,10 @@ function draw() {
   stroke(255,0,0)
   circle(200,365,2.5)
   rect(198.75,337.5,2.5,17.5)
-  
-  fill(0,255,0)
+}
+
+function drawhome(){
+   fill(0,255,0)
   stroke(0,255,0)
   rect(375,325,50,50)
   fill(255)
@@ -60,14 +69,30 @@ function draw() {
   fill(255,200,50)
   stroke(255,200,50) 
   stroke(0)
-  rect(375,340,50,40)
+  rect(387.5,340,25,20)
   fill(255,0,0)
   stroke(255,0,0)
-  triangle(400,331.25,365,333.5,435,333.75)
+  triangle(400,336.25,382.5,339.75,417.5,339.75)
   stroke(0)
-  strokeWeight(2)
-  rect(385,360,13,18)  
+  strokeWeight(1)
+  rect(394,348.5,6.5,9)  
   fill(0)
   stroke(0)
-  circle(388,366,1)
+  circle(396.5,353.5,1)
+}
+
+function draw() {
+  strokeWeight(5)
+  x2=30;
+  y2=30;
+  drawhuman();
+  x2=90;
+  y2=100
+  drawteki();
+  x2=30;
+  y2=100;
+  drawbikkuri();
+  x2=90;
+  y2=30;
+  drawhome();
 }
