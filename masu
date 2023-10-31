@@ -1,74 +1,98 @@
+let x2=30;
+let y2=30;
+
 function setup() {
   createCanvas(600, 450);
   strokeWeight(5)
 }
 
-function draw() {
+function drawhuman(){
   strokeWeight(5)
   background(220);
   fill(255)
   stroke(255)
-  rect(150,150,100,100)
+  rect(x2,y2,50,50)
   fill(0,200,255)
   stroke(0,200,255)
-  circle(200,200,80)
+  circle(x2+25,y2+25,40)
   fill(0) 
   stroke(0)
-  line(190,210,200,220)
-  line(200,220,210,210)
-  circle(185,190,5)
-  circle(215,190,5)
-  
+  line(x2+20,y2+35,x2+25,y2+40)
+  line(x2+25,y2+40,x2+30,y2+35)
+  circle(x2+15,y2+17.5,2.5)
+  circle(x2+35,y2+17.5,2.5)
+}
+
+function drawteki(){
   fill(0)
   stroke(0)
-  rect(350,150,100,100)
+  rect(375,175,50,50)
   fill(255,0,0)
   stroke(255,0,0)
-  circle(400,200,80)
+  circle(400,200,40)
   fill(255,204,0)
   stroke(255,204,0)
   strokeWeight(2)
-  triangle(380,155,375,170,385,170)
-  triangle(420,155,425,170,415,170)
+  triangle(390,175.5,387.5,183,392.5,183)
+  triangle(410,175.5,412.5,183,407.5,183)
   strokeWeight(5)
   fill(0)
   stroke(0)
-  circle(385,190,5)
-  circle(415,190,5)
-  line(390,220,400,210)
-  line(400,210,410,220)
-  line(380,210,390,220)
-  line(410,220,420,210)
-  
+  circle(390,192.5,2.5)
+  circle(410,192.5,2.5)
+  line(395,215,400,210)
+  line(400,210,405,215)
+  line(390,210,395,215)
+  line(405,215,410,210)
+}
+
+function drawbikkuri(){
   fill(255,255,0)
   stroke(255,255,0)
-  rect(150,300,100,100)
+  rect(175,325,50,50)
   fill(255)
   stroke(255)
-  circle(200,350,80)
+  circle(200,350,40)
   fill(255,0,0)
   stroke(255,0,0)
-  circle(200,375,5)
-  rect(197.5,325,5,35)
-  
-  fill(0,255,0)
+  circle(200,365,2.5)
+  rect(198.75,337.5,2.5,17.5)
+}
+
+function drawhome(){
+   fill(0,255,0)
   stroke(0,255,0)
-  rect(350,300,100,100)
+  rect(375,325,50,50)
   fill(255)
   stroke(255)
-  circle(400,350,80)
+  circle(400,350,40)
   fill(255,200,50)
-  stroke(255,200,50)
-  rect(380,340,45,35)
+  stroke(255,200,50) 
   stroke(0)
-  rect(375,340,50,40)
+  rect(387.5,340,25,20)
   fill(255,0,0)
   stroke(255,0,0)
-  triangle(400,320,365,345,435,345)
+  triangle(400,336.25,382.5,339.75,417.5,339.75)
   stroke(0)
-  strokeWeight(2)
-  rect(385,360,13,18)  
+  strokeWeight(1)
+  rect(394,348.5,6.5,9)  
   fill(0)
   stroke(0)
-  circle(388,366,1)
+  circle(396.5,353.5,1)
+}
+
+function draw() {
+  strokeWeight(5)
+  x2=30;
+  y2=30;
+  drawhuman();
+  x2=90;
+  y2=100
+  drawteki();
+  x2=30;
+  y2=100;
+  drawbikkuri();
+  x2=90;
+  y2=30;
+  drawhome();
 }
