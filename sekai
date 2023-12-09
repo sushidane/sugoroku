@@ -33,9 +33,9 @@ function keyPressed(){
 }
 
 function drawplayer(){
-  fill(127.5,0,255)
-  stroke(127.5,0,255)
- ellipse(150,150,30);  
+  fill(0)
+  stroke(0)
+ ellipse(10,10,10);  
 }
 
 function drawsetumei(){
@@ -84,8 +84,8 @@ function drawhumaneach(x,y){
 }
 
 function drawtekieach(x,y){
-  fill(0)
-  stroke(0)
+  fill(127.5,0,255)
+  stroke(127.5,0,255)
   rect(x,y,50,50)
   fill(255,0,0)
   stroke(255,0,0)
