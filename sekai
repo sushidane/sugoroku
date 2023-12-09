@@ -1,8 +1,9 @@
-let stage =1;
 let player;
 let setumei;
 let x2;
 let y2;
+let xx=[5,60,115,170,225,380,435,490,545]
+let yy=[5,60,115,170,225,380]
 
 function setup() {
   drawsyoki();
@@ -10,7 +11,7 @@ function setup() {
 
 function drawsyoki(){
   setumei=1;
-  createCanvas(600, 400);
+  createCanvas(600, 440);
   background(220);
   textSize(20)
   fill(255,0,0)
@@ -58,8 +59,7 @@ function drawworld(){
 }
 
 function drawhuman(){
-  drawhumaneach(x2,y2)
-  drawhumaneach(500,10)
+  drawhumaneach(xx[3],yy[0])
 }
 
 function drawhumaneach(x,y){
@@ -80,8 +80,7 @@ function drawhumaneach(x,y){
   
   
   function drawteki(){
-  drawtekieach(x2,y2)
-  drawtekieach(500,300)
+ drawtekieach(xx[2],yy[0])
 }
 
 function drawtekieach(x,y){
@@ -108,9 +107,7 @@ function drawtekieach(x,y){
 }
 
 function drawbikkuri(){
-  
-  drawbikkurieach(x2,y2)
-  drawbikkurieach(380,135)
+　drawbikkurieach(xx[0],yy[0])
 }
 
 function drawbikkurieach(x,y){
@@ -127,8 +124,7 @@ function drawbikkurieach(x,y){
 }
 
 function drawhome(){
-  drawhomeeach(x2,y2)
-  drawhomeeach(1,1)
+ drawhomeeach(xx[1],yy[0])
 }
 
 function drawhomeeach(x,y){
