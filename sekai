@@ -2,8 +2,8 @@ let player;
 let setumei;
 let x2;
 let y2;
-let xx=[5,60,115,170,225,380,435,490,545]
-let yy=[5,60,115,170,225,380]
+let xx=[5,60,115,170,225,280,335,390,445,500]
+let yy=[5,60,115,170,225,280,335,390]
 
 function setup() {
   drawsyoki();
@@ -11,12 +11,19 @@ function setup() {
 
 function drawsyoki(){
   setumei=1;
-  createCanvas(600, 440);
+  createCanvas(600, 445);
   background(220);
-  textSize(20)
+  textSize(15)
   fill(255,0,0)
   stroke(255,0,0)
-  text("fキーで操作説明",250,380)
+  text("f",565,30)
+  text("キ",560,60)
+  text("|",565,90)
+  text("で",560,120)
+  text("操",560,150)
+  text("作",560,180)
+  text("説",560,210)
+  text("明",560,240)
   drawworld(); 
   drawplayer();
 }
@@ -59,7 +66,15 @@ function drawworld(){
 }
 
 function drawhuman(){
+  drawhumaneach(xx[1],yy[0])
+  drawhumaneach(xx[2],yy[0])
   drawhumaneach(xx[3],yy[0])
+  drawhumaneach(xx[3],yy[1])
+  drawhumaneach(xx[7],yy[1])
+  drawhumaneach(xx[8],yy[1])
+  drawhumaneach(xx[6],yy[1])  
+  drawhumaneach(xx[8],yy[3])
+  drawhumaneach(xx[1],yy[0])
 }
 
 function drawhumaneach(x,y){
@@ -80,7 +95,25 @@ function drawhumaneach(x,y){
   
   
   function drawteki(){
- drawtekieach(xx[2],yy[0])
+ drawtekieach(xx[4],yy[0])
+ drawtekieach(xx[5],yy[0])
+ drawtekieach(xx[6],yy[0])
+ drawtekieach(xx[1],yy[1])
+ drawtekieach(xx[2],yy[1]) 
+ drawtekieach(xx[1],yy[3])
+ drawtekieach(xx[2],yy[3])
+ drawtekieach(xx[3],yy[3])
+ drawtekieach(xx[4],yy[3]) 
+ drawtekieach(xx[5],yy[3])   
+ drawtekieach(xx[6],yy[3]) 
+ drawtekieach(xx[6],yy[4])
+ drawtekieach(xx[7],yy[4])  
+ drawtekieach(xx[8],yy[4])    
+ drawtekieach(xx[1],yy[5])   
+ drawtekieach(xx[2],yy[5]) 
+ drawtekieach(xx[3],yy[5])  
+ drawtekieach(xx[4],yy[5])
+ drawtekieach(xx[9],yy[7])   
 }
 
 function drawtekieach(x,y){
@@ -108,6 +141,12 @@ function drawtekieach(x,y){
 
 function drawbikkuri(){
 　drawbikkurieach(xx[0],yy[0])
+  drawbikkurieach(xx[7],yy[0])
+  drawbikkurieach(xx[8],yy[0])
+  drawbikkurieach(xx[9],yy[0])
+  drawbikkurieach(xx[4],yy[1])
+  drawbikkurieach(xx[5],yy[1]) 
+  drawbikkurieach(xx[9],yy[1]) 
 }
 
 function drawbikkurieach(x,y){
@@ -124,7 +163,14 @@ function drawbikkurieach(x,y){
 }
 
 function drawhome(){
- drawhomeeach(xx[1],yy[0])
+  drawhomeeach(xx[0],yy[1])
+  drawhomeeach(xx[0],yy[2])
+  drawhomeeach(xx[0],yy[3])
+  drawhomeeach(xx[0],yy[4])
+  drawhomeeach(xx[0],yy[5])
+  drawhomeeach(xx[0],yy[6])
+  drawhomeeach(xx[0],yy[7])
+  drawhomeeach(xx[7],yy[7])
 }
 
 function drawhomeeach(x,y){
