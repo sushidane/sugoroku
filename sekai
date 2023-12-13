@@ -73,8 +73,14 @@ function drawhuman(){
   drawhumaneach(xx[7],yy[1])
   drawhumaneach(xx[8],yy[1])
   drawhumaneach(xx[6],yy[1])  
-  drawhumaneach(xx[8],yy[3])
-  drawhumaneach(xx[1],yy[0])
+  drawhumaneach(xx[1],yy[2])
+  drawhumaneach(xx[3],yy[2])
+  drawhumaneach(xx[5],yy[2])
+  drawhumaneach(xx[1],yy[3])
+  drawhumaneach(xx[1],yy[4])
+  drawhumaneach(xx[6],yy[4])
+  drawhumaneach(xx[7],yy[4])
+  drawhumaneach(xx[8],yy[4])
 }
 
 function drawhumaneach(x,y){
@@ -105,10 +111,7 @@ function drawhumaneach(x,y){
  drawtekieach(xx[3],yy[3])
  drawtekieach(xx[4],yy[3]) 
  drawtekieach(xx[5],yy[3])   
- drawtekieach(xx[6],yy[3]) 
- drawtekieach(xx[6],yy[4])
- drawtekieach(xx[7],yy[4])  
- drawtekieach(xx[8],yy[4])    
+ drawtekieach(xx[6],yy[3])    
  drawtekieach(xx[1],yy[5])   
  drawtekieach(xx[2],yy[5]) 
  drawtekieach(xx[3],yy[5])  
