@@ -4,6 +4,9 @@ let x2;
 let y2;
 let xx=[5,60,115,170,225,280,335,390,445,500]
 let yy=[5,60,115,170,225,280,335,390]
+let player0=0
+let player2=10
+let player3=[10,65,120,175,230,285,340,395,450,505]
 
 function setup() {
   drawsyoki();
@@ -33,16 +36,31 @@ function keyPressed(){
      if(setumei==1){ 
        drawsetumei();
     }}
-      else if(key=='g'){
+       if(key=='g'){
      if(setumei==2){ 
       drawsyoki();
   }}
+      if(key==' '){
+       if(setumei==1){
+         drawsaikoro()
+       }
+     }
+}
+
+function drawsaikoro(){
+  if(player0<10){ 
+  player0=player0+floor(random(1,4))
+}
+  else {
+    player2+=55
+    player0=0
+  }
 }
 
 function drawplayer(){
   fill(0)
   stroke(0)
-  ellipse(10,10,10)  
+  ellipse(player3[player0],player2,10)  
 }
 
 function drawsetumei(){
@@ -234,4 +252,5 @@ function drawhomeeach(x,y){
 }
 
 function draw() {
+drawplayer()
 }
