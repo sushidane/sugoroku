@@ -1,1 +1,41 @@
+let num=0
+let player=0
+let player2={x:10,y:10}
 
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+}
+
+function keyPressed(){
+  if(key==' '){
+    drawsaikoro()    
+  }
+}
+
+function drawsaikoro(){
+  num=random(1,4)
+  if(num>1&&num<2){
+    player=player+1
+  }
+  if(num>2&&num<3){
+    player=player+2
+  }
+  if(num>3&&num<4) {
+    player=player+3
+  }
+}
+
+function draw() {
+  console.log(num)
+  num=0
+  if(player2.x<370){
+     player2.x=player2.x+player*10 
+     }
+  else if(player2.x>369){
+          player2.x=10
+          player2.y+=30
+          }
+  
+  rect(player2.x,player2.y,20)  
+}
