@@ -7,6 +7,8 @@ let yy=[5,60,115,170,225,280,335,390]
 let player0=0
 let player2=10
 let player3=[10,65,120,175,230,285,340,395,450,505]
+let num=0
+let random2=0
 
 function setup() {
   drawsyoki();
@@ -48,13 +50,21 @@ function keyPressed(){
 }
 
 function drawsaikoro(){
-  if(player0<10){ 
-  player0=player0+floor(random(1,4))
+if(player2==395&&player0>6){
+  player0=9
 }
-  else {
+ else{
+  num=player0
+   random2= floor(random(1,4))
+ if(num+random2<10){
+    player0=num+random2
+ }
+  if(num+random2>9){
     player2+=55
-    player0=0
+    player0=random2-(10-num)
   }
+}
+console.log(random2)
 }
 
 function drawplayer(){
