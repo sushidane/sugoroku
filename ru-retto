@@ -1,5 +1,6 @@
 let player=0
-let player2={x:10,y:10}
+let player2=10
+let player3=[10,50,90,130,170,210,250,290,330,370]
 
 function setup() {
   createCanvas(400, 400);
@@ -13,18 +14,21 @@ function keyPressed(){
 }
 
 function drawsaikoro(){
-  player=floor(random(1,4)) 
+ if(player<10){ 
+  player=player+floor(random(1,4))
+}
+  else {
+    player2+=30
+    player=0
+  }
+  console.log(player)
+}
+
+function drawplayer(){
+   rect(player3[player],player2,20)  
 }
 
 function draw() {
-  console.log(player)
-  if(player2.x<370){
-     player2.x=player2.x+player*10
-     }
-  else if(player2.x>369){
-          player2.x=10
-          player2.y+=30
-          }
   
-  rect(player2.x,player2.y,20)  
+  drawplayer()  
 }
