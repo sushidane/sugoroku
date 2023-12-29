@@ -33,6 +33,12 @@ function drawsyoki(){
   drawplayer();
 }
 
+function drawplayer(){
+  fill(0)
+  stroke(0)
+  ellipse(player3[player0],player2,10)  
+}
+
 function keyPressed(){
     if(key=='f'){
      if(setumei==1){ 
@@ -65,12 +71,6 @@ if(player2==395&&player0>6){
   }
 }
 console.log(random2)
-}
-
-function drawplayer(){
-  fill(0)
-  stroke(0)
-  ellipse(player3[player0],player2,10)  
 }
 
 function drawsetumei(){
@@ -262,5 +262,23 @@ function drawhomeeach(x,y){
 }
 
 function draw() {
-drawplayer()
+  if(setumei==1){
+    background(220)
+    drawhuman()
+    drawteki()
+    drawbikkuri()
+    drawhome()
+    drawplayer()
+    textSize(15)
+    fill(255,0,0)
+    stroke(255,0,0)
+    text("f",565,30)
+    text("キ",560,60)
+    text("|",565,90)
+    text("で",560,120)
+    text("操",560,150)
+    text("作",560,180)
+    text("説",560,210)
+    text("明",560,240)
+    }
 }
