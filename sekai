@@ -145,9 +145,40 @@ function drawsetumei() {
 }
 
 function drawsyori() {
-  //  if(masu==human[index]){
-  //   console.log('あｋせｈると')
-  // }
+  for (
+    tasikame = 0;
+    human[tasikame] !== masu &&
+    teki[tasikame] !== masu &&
+    bikkuri[tasikame] !== masu &&
+    home[tasikame] !== masu;
+    tasikame++
+  ) {
+    if (human[tasikame] == masu) {
+      drawhumana();
+    } else if (teki[tasikame] == masu) {
+      drawtekia();
+    } else if (bikkuri[tasikame] == masu) {
+      drawbikkuria();
+    } else if (home[tasikame] == masu) {
+      drawhomea();
+    }
+  }
+}
+
+function drawhumana() {
+  console.log("a");
+}
+
+function drawtekia() {
+  console.log("b");
+}
+
+function drawbikkuria() {
+  console.log("c");
+}
+
+function drawhomea() {
+  console.log("d");
 }
 
 function drawworld() {
