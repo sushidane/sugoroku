@@ -337,10 +337,7 @@ function draw() {
     text("説", 560, 210);
     text("明", 560, 240);
   }
-  if (keyIsPressed) {
-    if (key == "h") {
-      console.log("k");
-    }
+  if (keyIsPressed) {    
     if (key == "space") {
       if (player2 == 395 && player0 > 6) {
         player0 = 9;
@@ -361,19 +358,15 @@ function draw() {
   }
   if (human[tasikame] == masu) {
     drawhumana();
-    console.log("a");
   }
   if (teki[tasikame] == masu) {
     drawtekia();
-    console.log("b");
   }
   if (bikkuri[tasikame] == masu) {
     drawbikkuria();
-    console.log("c");
   }
   if (home[tasikame] == masu) {
     drawhomea();
-    console.log("d");
   } else {
     tasikame++;
   }
