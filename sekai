@@ -9,6 +9,7 @@ let player2 = 10;
 let player3 = [10, 65, 120, 175, 230, 285, 340, 395, 450, 505];
 let num = 0;
 let masu = 0;
+let tasikame = 0;
 let human = [
   1,
   2,
@@ -111,58 +112,11 @@ function keyPressed() {
       drawsyoki();
     }
   }
-  if (key == " ") {
-    if (setumei == 1) {
-      drawsaikoro();
-    }
-  }
-}
-
-function drawsaikoro() {
-  if (player2 == 395 && player0 > 6) {
-    player0 = 9;
-    masu = 79;
-  } else {
-    num = player0;
-    random2 = floor(random(1, 4));
-    masu = masu + random2;
-    if (num + random2 < 10) {
-      player0 = num + random2;
-    }
-    if (num + random2 > 9) {
-      player2 += 55;
-      player0 = random2 - (10 - num);
-    }
-  }
-  console.log(random2);
-  console.log(masu);
-  drawsyori();
 }
 
 function drawsetumei() {
   setumei = 2;
   background(0);
-}
-
-function drawsyori() {
-  for (
-    tasikame = 0;
-    human[tasikame] !== masu &&
-    teki[tasikame] !== masu &&
-    bikkuri[tasikame] !== masu &&
-    home[tasikame] !== masu;
-    tasikame++
-  ) {
-    if (human[tasikame] == masu) {
-      drawhumana();
-    } else if (teki[tasikame] == masu) {
-      drawtekia();
-    } else if (bikkuri[tasikame] == masu) {
-      drawbikkuria();
-    } else if (home[tasikame] == masu) {
-      drawhomea();
-    }
-  }
 }
 
 function drawhumana() {
@@ -382,5 +336,45 @@ function draw() {
     text("作", 560, 180);
     text("説", 560, 210);
     text("明", 560, 240);
+  }
+  if (keyIsPressed) {
+    if (key == "h") {
+      console.log("k");
+    }
+    if (key == "space") {
+      if (player2 == 395 && player0 > 6) {
+        player0 = 9;
+        masu = 79;
+      } else {
+        num = player0;
+        random2 = floor(random(1, 4));
+        masu = masu + random2;
+        if (num + random2 < 10) {
+          player0 = num + random2;
+        }
+        if (num + random2 > 9) {
+          player2 += 55;
+          player0 = random2 - (10 - num);
+        }
+      }
+    }
+  }
+  if (human[tasikame] == masu) {
+    drawhumana();
+    console.log("a");
+  }
+  if (teki[tasikame] == masu) {
+    drawtekia();
+    console.log("b");
+  }
+  if (bikkuri[tasikame] == masu) {
+    drawbikkuria();
+    console.log("c");
+  }
+  if (home[tasikame] == masu) {
+    drawhomea();
+    console.log("d");
+  } else {
+    tasikame++;
   }
 }
