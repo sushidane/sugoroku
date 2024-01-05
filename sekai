@@ -9,7 +9,6 @@ let player2 = 10;
 let player3 = [10, 65, 120, 175, 230, 285, 340, 395, 450, 505];
 let num = 0;
 let masu = 0;
-let tasikame = 0;
 let human = [
   1,
   2,
@@ -112,11 +111,58 @@ function keyPressed() {
       drawsyoki();
     }
   }
+  if (key == " ") {
+    if (setumei == 1) {
+      saikoro();
+    }
+  }
+}
+
+function saikoro() {
+  if (player2 == 395 && player0 > 6) {
+    player0 = 9;
+    masu = 79;
+  } else {
+    num = player0;
+    random2 = floor(random(1, 4));
+    masu = masu + random2;
+    if (num + random2 < 10) {
+      player0 = num + random2;
+    }
+    if (num + random2 > 9) {
+      player2 += 55;
+      player0 = random2 - (10 - num);
+    }
+  }
+  drawsyori();
 }
 
 function drawsetumei() {
   setumei = 2;
   background(0);
+}
+
+function drawsyori() {
+for(let tasikameh=0;tasikameh<30;tasikameh++){
+  if(human[tasikameh]==masu){
+    drawhumana()
+  }
+}
+for(let tasikamet=0;tasikamet<31;tasikamet++){
+  if(teki[tasikamet]==masu){
+    drawtekia()
+  }
+}
+for(let tasikameb=0;tasikameb<30;tasikameb++){
+  if(bikkuri[tasikameb]==masu){
+    drawbikkuria()
+  }
+}
+for(let tasikamei=0;tasikamei<30;tasikamei++){
+  if(home[tasikamei]==masu){
+    drawhomea()
+  }
+}
 }
 
 function drawhumana() {
@@ -336,38 +382,5 @@ function draw() {
     text("作", 560, 180);
     text("説", 560, 210);
     text("明", 560, 240);
-  }
-  if (keyIsPressed) {    
-    if (key == "space") {
-      if (player2 == 395 && player0 > 6) {
-        player0 = 9;
-        masu = 79;
-      } else {
-        num = player0;
-        random2 = floor(random(1, 4));
-        masu = masu + random2;
-        if (num + random2 < 10) {
-          player0 = num + random2;
-        }
-        if (num + random2 > 9) {
-          player2 += 55;
-          player0 = random2 - (10 - num);
-        }
-      }
-    }
-  }
-  if (human[tasikame] == masu) {
-    drawhumana();
-  }
-  if (teki[tasikame] == masu) {
-    drawtekia();
-  }
-  if (bikkuri[tasikame] == masu) {
-    drawbikkuria();
-  }
-  if (home[tasikame] == masu) {
-    drawhomea();
-  } else {
-    tasikame++;
   }
 }
