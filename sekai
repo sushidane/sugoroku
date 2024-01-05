@@ -143,26 +143,26 @@ function drawsetumei() {
 }
 
 function drawsyori() {
-for(let tasikameh=0;tasikameh<30;tasikameh++){
-  if(human[tasikameh]==masu){
-    drawhumana()
+  for (let tasikameh = 0; tasikameh < 30; tasikameh++) {
+    if (human[tasikameh] == masu) {
+      drawhumana();
+    }
   }
-}
-for(let tasikamet=0;tasikamet<31;tasikamet++){
-  if(teki[tasikamet]==masu){
-    drawtekia()
+  for (let tasikamet = 0; tasikamet < 31; tasikamet++) {
+    if (teki[tasikamet] == masu) {
+      drawtekia();
+    }
   }
-}
-for(let tasikameb=0;tasikameb<30;tasikameb++){
-  if(bikkuri[tasikameb]==masu){
-    drawbikkuria()
+  for (let tasikameb = 0; tasikameb < 30; tasikameb++) {
+    if (bikkuri[tasikameb] == masu) {
+      drawbikkuria();
+    }
   }
-}
-for(let tasikamei=0;tasikamei<30;tasikamei++){
-  if(home[tasikamei]==masu){
-    drawhomea()
+  for (let tasikamei = 0; tasikamei < 30; tasikamei++) {
+    if (home[tasikamei] == masu) {
+      drawhomea();
+    }
   }
-}
 }
 
 function drawhumana() {
