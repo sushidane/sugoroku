@@ -9,6 +9,15 @@ let player2 = 10;
 let player3 = [10, 65, 120, 175, 230, 285, 340, 395, 450, 505];
 let num = 0;
 let masu = 0;
+let kaihukuyaku =2
+let hp=4
+let Mhp
+let kougeki
+let LV=1
+let Ghp=Mhp-hp
+let tekik
+let tekih
+let stage
 let human = [
   1,
   2,
@@ -92,6 +101,7 @@ function drawsyoki() {
   text("明", 560, 240);
   drawworld();
   drawplayer();
+  stage=1
 }
 
 function drawplayer() {
@@ -101,22 +111,44 @@ function drawplayer() {
 }
 
 function keyPressed() {
-  if (key == "f") {
-    if (setumei == 1) {
-      drawsetumei();
+  if(key=="f"){
+    if(stage==1){
+      if(setumei==1){
+        drawsetumei()
+       console.log(hp)
+      }
+    }
+    else if(stage==2){
+      if(mahougage==1){
+      drawmahou()
+      hp=hp-tekik
+    }}
+  }
+  if(key=="g"){
+    if(stage==1){
+      if(setumei==2){
+        drawsyoki()
+      }
+    }
+    else if(stage==2){
+      drawkougeki()
+      hp=hp-tekik
+    }
+  }  
+  
+  if(key=="s"){
+    if(stage==2){
+      stage=3
     }
   }
-  if (key == "g") {
-    if (setumei == 2) {
-      drawsyoki();
-    }
-  }
+  
   if (key == " ") {
     if (setumei == 1) {
+      if(stage==1){
       saikoro();
-    }
-  }
-}
+      }
+      }  
+  }}
 
 function saikoro() {
   if (player2 == 395 && player0 > 6) {
@@ -171,6 +203,79 @@ function drawhumana() {
 
 function drawtekia() {
   console.log("b");
+  kougeki=LV
+  Mhp=LV*4
+  tekik=LV
+  tekih=LV*4
+  tekih2=tekih
+  Ghp=Mhp-hp
+  stage=2
+  mahougage=1
+  if(stage==2){
+   background(220)
+ }
+ fill(255)
+ circle(300,200,90);
+ fill(255);
+ rect(40,370,100,50)
+ rect(160,370,100,50)
+ rect(280,370,90,50)
+ rect(390,370,150,50)
+ textSize(15);
+ stroke(0)
+ fill(0)
+ text("通常攻撃(g)",50,400);
+  console.log("mahougage:",mahougage)
+ if(mahougage==0){
+   fill(255,0,0)
+   console.log("iro kawaru?")
+ }
+ text("魔法攻撃(f)",170,400);
+ fill(0)
+ text("回復薬(d)",290,400)
+ text("ステータス確認(s)",400,400)
+ text("スライム",270,205)
+ fill(255,0,0)
+ rect(10,20,440,30)
+ fill(94,95,93)
+ rect(450,20,-110*Ghp,30)
+ fill(0)
+ textSize(20)  
+ text(hp+"/"+Mhp,470,40)
+ text(tekih+"/"+tekih2,280,150)
+ console.log(hp)
+  if(stage==3){
+  fill(0)
+  rect(100,100,400,245)
+  fill(255)
+  text("LV"+LV,120,120)
+  text("AT"+kougeki,120,150)
+  text("HP"+Mhp,120,180)
+  text("RR"+kaihukuyaku,120,210)
+  }
+}
+function drawkougeki(){
+  tekih-=kougeki
+  if(tekih<1){
+    stage=1
+    LV+=1
+  }
+}
+
+function drawmahou(){
+  tekih-=kougeki*2
+  mahougage=0
+  if(tekih<1){
+    stage=1
+    LV+=1
+  }
+}
+
+function drawkaihuku(){
+  if(kaihukuyaku>0){
+    kaihukuyaku -=1
+    hp=Mhp
+  }
 }
 
 function drawbikkuria() {
@@ -224,7 +329,7 @@ function drawhuman() {
 }
 
 function drawhumaneach(x, y) {
-  strokeWeight(5);
+  if(stage==1){strokeWeight(5);
   fill(255);
   stroke(255);
   rect(x, y, 50, 50);
@@ -237,7 +342,7 @@ function drawhumaneach(x, y) {
   line(x + 25, y + 40, x + 30, y + 35);
   circle(x + 15, y + 17.5, 2.5);
   circle(x + 35, y + 17.5, 2.5);
-}
+}}
 
 function drawteki() {
   drawtekieach(xx[4], yy[0]);
@@ -274,7 +379,7 @@ function drawteki() {
 }
 
 function drawtekieach(x, y) {
-  fill(127.5, 0, 255);
+  if(stage==1){fill(127.5, 0, 255);
   stroke(127.5, 0, 255);
   rect(x, y, 50, 50);
   fill(255, 0, 0);
@@ -294,7 +399,7 @@ function drawtekieach(x, y) {
   line(x + 25, y + 35, x + 30, y + 40);
   line(x + 15, y + 35, x + 20, y + 40);
   line(x + 30, y + 40, x + 35, y + 35);
-}
+}}
 
 function drawbikkuri() {
   drawbikkurieach(xx[0], yy[0]);
@@ -317,7 +422,7 @@ function drawbikkuri() {
 }
 
 function drawbikkurieach(x, y) {
-  fill(255, 255, 0);
+  if(stage==1){fill(255, 255, 0);
   stroke(255, 255, 0);
   rect(x, y, 50, 50);
   fill(255);
@@ -327,7 +432,7 @@ function drawbikkurieach(x, y) {
   stroke(255, 0, 0);
   circle(x + 25, y + 40, 2.5);
   rect(x + 23.75, y + 12.5, 2.5, 17.5);
-}
+}}
 
 function drawhome() {
   drawhomeeach(xx[0], yy[1]);
@@ -341,7 +446,7 @@ function drawhome() {
 }
 
 function drawhomeeach(x, y) {
-  strokeWeight(5);
+  if(stage==1){strokeWeight(5);
   fill(0, 255, 0);
   stroke(0, 255, 0);
   rect(x, y, 50, 50);
@@ -361,10 +466,10 @@ function drawhomeeach(x, y) {
   fill(0);
   stroke(0);
   circle(x + 21.5, y + 28.5, 1);
-}
+}}
 
 function draw() {
-  if (setumei == 1) {
+ if(stage==1){ if (setumei == 1) {
     background(220);
     drawhuman();
     drawteki();
@@ -383,4 +488,4 @@ function draw() {
     text("説", 560, 210);
     text("明", 560, 240);
   }
-}
+}}
