@@ -133,14 +133,24 @@ function keyPressed() {
     else if(stage==2){
       drawkougeki()
       if(tekih>0){hp=hp-tekik
-    }}
-  }  
+    }}}
+  
   
   if(key=="s"){
     if(stage==2){
       stage=3
+      console.log("nnnn")
     }
-  }
+}
+  if(key=="a"){
+        if(stage==3){
+      stage=2
+      console.log("pppp")
+  }}
+  
+  if(key=="d"){
+  drawkaihuku()
+ }
   
   if (key == " ") {
     if (setumei == 1) {
@@ -148,8 +158,8 @@ function keyPressed() {
       saikoro();
       }
       }  
-  }}
-
+  }
+}
 function saikoro() {
   if (player2 == 395 && player0 > 6) {
     player0 = 9;
@@ -259,6 +269,7 @@ function drawkougeki(){
   if(tekih<1){
     stage=1
     LV+=1
+    hp+=4
   }}
 
 function drawmahou(){
@@ -267,6 +278,7 @@ function drawmahou(){
   if(tekih<1){
     stage=1
     LV+=1
+    hp+=4
   }
 }
 
@@ -504,7 +516,7 @@ if(stage==2){
  stroke(0)
  fill(0)
  text("通常攻撃(g)",50,400);
-  console.log("mahougage:",mahougage)
+ // console.log("mahougage:",mahougage)
  if(mahougage==0){
    fill(255,0,0)
    console.log("iro kawaru?")
@@ -522,8 +534,11 @@ if(stage==2){
  textSize(20)  
  text(hp+"/"+Mhp,520,40)
  text(tekih+"/"+tekih2,280,150)
- console.log(hp)
-  if(stage==3){
+// console.log(hp)
+  
+}
+if(stage==3){
+  console.log("found!!!!");
   fill(0)
   rect(100,100,400,245)
   fill(255)
@@ -532,4 +547,4 @@ if(stage==2){
   text("HP"+Mhp,120,180)
   text("RR"+kaihukuyaku,120,210)
   }
-}}
+}
