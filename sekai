@@ -121,8 +121,8 @@ function keyPressed() {
     else if(stage==2){
       if(mahougage==1){
       drawmahou()
-      hp=hp-tekik
-    }}
+      if(tekih>0){hp=hp-tekik
+    }}}
   }
   if(key=="g"){
     if(stage==1){
@@ -132,8 +132,8 @@ function keyPressed() {
     }
     else if(stage==2){
       drawkougeki()
-      hp=hp-tekik
-    }
+      if(tekih>0){hp=hp-tekik
+    }}
   }  
   
   if(key=="s"){
@@ -259,8 +259,7 @@ function drawkougeki(){
   if(tekih<1){
     stage=1
     LV+=1
-  }
-}
+  }}
 
 function drawmahou(){
   tekih-=kougeki*2
@@ -487,5 +486,50 @@ function draw() {
     text("作", 560, 180);
     text("説", 560, 210);
     text("明", 560, 240);
+  }
+}
+if(stage==2){
+  Ghp=Mhp-hp
+  if(stage==2){
+   background(220)
+ }
+ fill(255)
+ circle(300,200,90);
+ fill(255);
+ rect(40,370,100,50)
+ rect(160,370,100,50)
+ rect(280,370,90,50)
+ rect(390,370,150,50)
+ textSize(15);
+ stroke(0)
+ fill(0)
+ text("通常攻撃(g)",50,400);
+  console.log("mahougage:",mahougage)
+ if(mahougage==0){
+   fill(255,0,0)
+   console.log("iro kawaru?")
+ }
+ text("魔法攻撃(f)",170,400);
+ fill(0)
+ text("回復薬(d)",290,400)
+ text("ステータス確認(s)",400,400)
+ text("スライム",270,205)
+ fill(255,0,0)
+ rect(10,20,440,30)
+ fill(94,95,93)
+ rect(450,20,-110*Ghp,30)
+ fill(0)
+ textSize(20)  
+ text(hp+"/"+Mhp,470,40)
+ text(tekih+"/"+tekih2,280,150)
+ console.log(hp)
+  if(stage==3){
+  fill(0)
+  rect(100,100,400,245)
+  fill(255)
+  text("LV"+LV,120,120)
+  text("AT"+kougeki,120,150)
+  text("HP"+Mhp,120,180)
+  text("RR"+kaihukuyaku,120,210)
   }
 }}
