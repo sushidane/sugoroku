@@ -18,6 +18,9 @@ let Ghp=Mhp-hp
 let tekik
 let tekih
 let stage
+let br
+let gold=200
+let stage2=1
 let human = [
   1,
   2,
@@ -113,39 +116,44 @@ function drawplayer() {
 function keyPressed() {
   if(key=="f"){
     if(stage==1){
+      if(stage2==1){
       if(setumei==1){
         drawsetumei()
-       console.log(hp)
+//       console.log(hp)
       }
-    }
+      }
     else if(stage==2){
+      if(stage2==1){
       if(mahougage==1){
       drawmahou()
       if(tekih>0){hp=hp-tekik
-    }}}
+    }}}}}
   }
   if(key=="g"){
     if(stage==1){
       if(setumei==2){
+        if(stage2==1){
         drawsyoki()
+      }}
       }
-    }
+    
     else if(stage==2){
+      if(stage2==1){
       drawkougeki()
-      if(tekih>0){hp=hp-tekik
-    }}}
-  
+      if(tekih>0){hp=hp-tekik}
+    console.log("test")}}
+  }
   
   if(key=="s"){
     if(stage==2){
       stage=3
-      console.log("nnnn")
+//      console.log("nnnn")
     }
 }
   if(key=="a"){
         if(stage==3){
       stage=2
-      console.log("pppp")
+//      console.log("pppp")
   }}
   
   if(key=="d"){
@@ -208,11 +216,11 @@ function drawsyori() {
 }
 
 function drawhumana() {
-  console.log("a");
+//  console.log("a");
 }
 
 function drawtekia() {
-  console.log("b");
+if(stage2==1){//  console.log("b");
   kougeki=LV
   Mhp=LV*4
   tekik=LV
@@ -238,7 +246,7 @@ function drawtekia() {
   console.log("mahougage:",mahougage)
  if(mahougage==0){
    fill(255,0,0)
-   console.log("iro kawaru?")
+//   console.log("iro kawaru?")
  }
  text("魔法攻撃(f)",170,400);
  fill(0)
@@ -253,7 +261,7 @@ function drawtekia() {
  textSize(20)  
  text(hp+"/"+Mhp,520,40)
  text(tekih+"/"+tekih2,280,150)
- console.log(hp)
+// console.log(hp)
   if(stage==3){
   fill(0)
   rect(100,100,400,245)
@@ -262,8 +270,8 @@ function drawtekia() {
   text("AT"+kougeki,120,150)
   text("HP"+Mhp,120,180)
   text("RR"+kaihukuyaku,120,210)
+  }}
   }
-}
 function drawkougeki(){
   tekih-=kougeki
   if(tekih<1){
@@ -291,10 +299,23 @@ function drawkaihuku(){
 
 function drawbikkuria() {
   console.log("c");
+  br=floor(random(2))
+//  console.log(br)
+  if(br==0){
+    console.log("gold")
+    gold+=100
+  }
+  if(br==1){
+    console.log("kusuri")
+    kaihukuyaku+=1
+  }
 }
 
 function drawhomea() {
-  console.log("d");
+  stage2=2
+  background(220)
+  rect(100,500,30,50)
+  rect(300,500,30,50)
 }
 
 function drawworld() {
@@ -480,7 +501,8 @@ function drawhomeeach(x, y) {
 }}
 
 function draw() {
- if(stage==1){ if (setumei == 1) {
+ if(stage2==1){
+   if(stage==1){ if (setumei == 1) {
     background(220);
     drawhuman();
     drawteki();
@@ -519,7 +541,7 @@ if(stage==2){
  // console.log("mahougage:",mahougage)
  if(mahougage==0){
    fill(255,0,0)
-   console.log("iro kawaru?")
+//   console.log("iro kawaru?")
  }
  text("魔法攻撃(f)",170,400);
  fill(0)
@@ -538,7 +560,7 @@ if(stage==2){
   
 }
 if(stage==3){
-  console.log("found!!!!");
+//  console.log("found!!!!");
   fill(0)
   rect(100,100,400,245)
   fill(255)
@@ -547,4 +569,5 @@ if(stage==3){
   text("HP"+Mhp,120,180)
   text("RR"+kaihukuyaku,120,210)
   }
+}
 }
