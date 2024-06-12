@@ -32,14 +32,11 @@ function keyPressed() {
   
   if(key=="f"){
     if(stage==1){
-        stage=2
+        stage==2
       }
     if(stage==3 && mahougage==1){
         drawmahou()
       }
-    if(stage==6){
-      kaihukuyaku+=1
-    }
   }
   
   if(key=="g"){
@@ -49,11 +46,6 @@ function keyPressed() {
     if(stage==3){
         drawkougeki()
       }
-    if(stage==6){
-      LV+=1
-      hp+=4
-      Mhp+=4
-    }
   }
   
   if(key=="s"){
@@ -69,13 +61,10 @@ function keyPressed() {
   }
   
   if(key=="d"){
-    if(stage==3 && kaihukuyaku>0){
+    if(stage==2 && kaihukuyaku>0){
         hp=Mhp
         kaihukuyaku -=1
       }
-    if(stage==6){
-      stage=1
-    }
   }
   
   if(key == " "){
@@ -338,8 +327,8 @@ function drawhomeeach(x, y) {
 }}
 
 function draw() {
-  createCanvas(600,445)
   if(stage==1){
+    createCanvas(600,445)
     background(220);
     drawhuman();
     drawteki();
@@ -363,7 +352,7 @@ function draw() {
 
   if(stage==2){
     background(255)
-    textSize(50)
+    textSize(100)
     stroke(0)
     text("操作説明（創作中）",100,100)
     textSize(20)
@@ -410,7 +399,7 @@ function draw() {
     text("AT"+kougeki,120,150)
     text("HP"+Mhp,120,180)
     text("RR"+kaihukuyaku,120,210)
-    text("aキーでもどる",120,270)
+    tect("aキーでもどる",120,270)
   }
   
   if(stage==5){
@@ -428,19 +417,7 @@ function draw() {
   
   if(stage==6){
      background(220)
-     stroke(255)
-     fill(255)
-     rect(250,100,150,50)
-     rect(100,300,150,50)
-     rect(400,300,150,50)
-     textSize(20)
-     fill(0)
-     text("回復薬を買う",115,335)
-     text("LVを１上げる",415,335)
-     text("村を退出する",265,135)
-     fill(255,0,0)
-     text("２００Ｇ（Ｆ）",115,375)
-     text("５００Ｇ（Ｇ）",415,375)
-     text("（Ｄキーで可）",265,175)
+     rect(100,500,30,50)
+     rect(300,500,30,50)
   }
 }
