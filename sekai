@@ -161,12 +161,21 @@ function drawtomarumasu() {
 }
 
 function drawtekia() {
-  kougeki=LV
-  Mhp=LV*4
-  tekik=LV
-  tekih=LV*4
-  tekih2=tekih
-  mahougage=1
+  if(masu!==79){
+    kougeki=LV
+    Mhp=LV*4
+    tekik=LV
+    tekih=LV*4
+    tekih2=tekih
+    mahougage=1
+  }else if(masu==79){
+    kougeki=LV
+    Mhp=LV*4
+    tekik=40
+    tekih=100
+    tekih2=tekih
+    mahougage=1
+  }
 }
 
 function drawkougeki(){
